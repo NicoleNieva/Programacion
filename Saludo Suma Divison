@@ -1,0 +1,37 @@
+/*-----------------------------------------------------------------
+ Programa: Saludo.cpp
+ Version: V1
+ Fecha: 28/2/2014
+ Autor: Carlos Daniel Ardaya
+ Comentario: Manda un saludo
+----------------------------------------------------------------*/
+
+#include "stdafx.h"// Primera libreria
+#include "conio.h"
+#include "stdlib.h"
+#include "stdio.h"
+
+
+void main()
+{
+char Nom[20],Ape[20] ;
+int A,B,Suma;
+float A1,Div;
+printf ("\n\n Ingrese su Nombre: ");
+scanf ("%s",&Nom);
+printf ("\n\n Ingrese su Apellido: ");
+scanf ("%s",&Ape);
+printf ("\n\n Ingrese primer Entero: ");
+scanf ("%d",&A);
+printf ("\n\n Ingrese segundo Entero: ");
+scanf ("%d",&B);
+A1= A;
+Suma = A + B;
+Div = A1 / B;
+printf("\n\n Buenos Dias %s %s",Nom,Ape );
+printf ("\n\n La suma de %d + %d = %d",A,B,Suma);
+printf ("\n\n La divison de %d / %d = %5.2f",A,B,Div);
+printf("\n\n");
+system("pause");
+
+}
