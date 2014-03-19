@@ -1,0 +1,34 @@
+// Sueldos.cpp : Defines the entry point for the console application.
+//Autor: Nicole Nieva
+//Fecha: 19.03.14
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+{
+	float Sueldo, AFP, IVA, SueldoFinal, SueldoIVA;
+	 cout << "Ingrese el Sueldo: " ;
+	 cin >> (Sueldo) ;
+	 AFP = (Sueldo*12)/100 ;
+	 IVA = (Sueldo*13)/100 ;
+	 if (Sueldo < 2800) 
+	 {
+	 SueldoFinal = Sueldo - AFP ;
+	 cout << "El Sueldo Neto es: " ;
+	 cout <<  SueldoFinal ;
+	 }
+	 else
+	 {if (Sueldo > 2800)
+	 SueldoIVA = Sueldo - AFP - IVA ;
+	 cout << "El Sueldo Neto es: " ;
+	 cout << SueldoIVA ;
+	 }
+ 	 
+		 
+
+		getch();
+
+}
