@@ -1,0 +1,35 @@
+// examen parcial.cpp : Defines the entry point for the console application.
+//Autor: Nicole Nieva
+//Fecha: 25.03.13
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+void main()
+			
+{
+	int Num1, Num2, Resultado;
+	cout<< " \t\t\t  CALCULO DE DOS NUMEROS ";
+	cout<< " \n\n Ingrese Primer Numero: ";
+	cin>> Num1;
+	cout<< " \n\n Ingrese Segundo Numero: ";
+	cin>> Num2;
+
+ if ((Num1 % 2 == 0) && (Num2 % 2 == 0))
+ {
+	 Resultado = Num1 + Num2;
+	 cout<< " \n\n El Resultado es: ";
+		 cout<< (Resultado);
+ }
+ else
+ {
+	 Resultado= Num1 * Num2;
+     cout<< " \n\n El Resultado es: ";
+	     cout<< (Resultado);
+ }
+	 cout<< " \n\n PRESIONE UN BOTON PARA CONTINUAR...";
+		 getch();
+}
