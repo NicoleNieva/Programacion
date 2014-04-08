@@ -12,7 +12,7 @@ void main()
 
 {
 float P1,P2,P3,Practica,Final,NotaFinal,Continuar;
- cout<<  "\t\t\t\t CALCULO DE NOTAS";        
+ cout<<  " *-*-*-*-*-*-*-*-*-*-*-*-  CALCULO DE NOTAS  -*-*-*-*-*-*-*-*-*-*-*-*-*";        
 do 
 {
 cout<< "\n\n Ingrese la nota del Primer Parcial: ";
@@ -54,8 +54,10 @@ cin>> Final;
 NotaFinal=(P1 + P2 + P3) / 3 * 0.4 + Practica * 0.2+ Final * 0.4;
 cout<< "\n\n La Nota Final es: " ;
 cout<< NotaFinal;
+cout<<  "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*";
 do
 {
+	 cout<<  "\n\n *-*-*-*-*-*-*-*-*-*-*-*-  CALCULO DE NOTAS  -*-*-*-*-*-*-*-*-*-*-*-*-*"; 
 	cout<< "\n\n Ingrese la nota del Primer Parcial: ";
 	cin>> P1;
 }
@@ -64,5 +66,6 @@ while ((P1>100 || P1<0) && (P1!=-99));
 }
     getch();
 }
+
 
 
