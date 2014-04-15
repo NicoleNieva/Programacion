@@ -41,8 +41,8 @@ void main()
 		  Resultado = a / b;
 		  cout<< Resultado;
 	  }
+	system("cls");
   }
-
   while(Opc!=0);
      
   
