@@ -1,0 +1,17 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int main()
+{
+	int Suma,N,i;
+	cout<< "Ingrese el valor de N: ";
+	cin>> N;
+	Suma=1;	
+	for (i=1;i<=N/2;i++)
+		Suma= Suma + (i*2+1);
+	cout<< Suma;
+	getch();
+	return 0;
+}
