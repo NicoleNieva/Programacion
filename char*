@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void main()
+{
+	int i;
+  char caracter = '*';
+  for (i=0;i<=19;i++)
+	  cout<< caracter;
+  getch();
+}
