@@ -1,44 +1,42 @@
-
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
-#include "math.h"
+#include "stdlib.h"
 
 using namespace std;
+
 void main()
 {
-	int a,b,MCD,mcm,cont,menor;
-	cout<< "\n\nIngrese el valor de A: ";
-    cin>> a;
-	cout<< "\n\nIngrese el valor de B: ";
-	cin>> b;
-	
-	if(a<b)
-	  menor = a;
-	else
-	  menor = b;
-	  
-	MCD = 1;
-	mcm = 0;
-	cont = 2;
-	while (cont <= menor)
-	{
-	 if((a % cont==0)&&(b % cont==0))
-	 {
-		 a = a/cont;
-		 b = b/cont;
-		 menor = menor/cont;
-		 mcm = (a*b)/MCD;
-		 mcm = mcm*cont;
-		 cont = cont-1;
-	 }
-	cont = cont+1;
-
-	}
-	cout<< mcm;
-	getch();
+  int a1,b1,a,b,menor,cont;
+  float MCD,mcm;
+  cout<< "\n\nIngrese el valor de A: ";
+  cin>> a;
+  a1=a;
+  cout<< "\n\nIngrese el valor de B: ";
+  cin>> b;
+  b1=b;
+  if(a<b)
+     menor = a;
+  else
+     menor = b;
+  MCD = 1;
+  cont = 2;
+  while (cont <= menor)
+  {
+   if((a % cont==0)&&(b % cont==0))
+   {
+     a = a/cont;
+     b = b/cont;
+     menor = menor/cont;
+     MCD = MCD*cont;
+     cont = cont-1;
+    }
+   cont = cont+1;
+   }
+  mcm = (a1*b1)/MCD;
+  cout<< mcm;
+ getch();
 }
-
 	 
 	
 	
