@@ -1,0 +1,52 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+{
+	float P,R;
+	cout<< "Ingrese el valor de P: ";
+	cin>> P;
+
+	if ((0 < P)&& (P <= 50))
+	{
+		R=1.50;
+		cout<< "El costo es: "<<R;
+		
+	}
+	else
+	    if ((50 < P) && (P <= 100))	
+		{
+		 R=4;
+		 cout<< "El costo es: "<<R;
+		
+		}
+	if ((100 < P) && (P <= 200))
+	{
+		R=6;
+		cout<< "El costo es: "<<R;
+			
+	}
+	else
+		if ((200 < P)&& (P <= 350))
+		{
+			R=10.50;
+			cout<< "El costo es: "<<R;
+		
+		}
+    if ((350 < P) && (P <= 500)) 
+	{
+		R=15;
+		cout<< "El costo es: "<<R;
+		
+	}
+	else
+		if (P  > 500 )
+		{
+			cout<< "NO PUEDE ENVIAR COMO CARTA";
+		}
+    
+	getch();
+}
+      
