@@ -1,0 +1,38 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main()
+{ 
+	int m,c,d,u,n,n1,n2,n3;
+	cin>>n;
+	n1=1000;
+	n2=100;
+	n3=10;
+	while((n<0)||(n>10000))
+	{
+		cout<< "ERRor";
+		cin>>n;
+	}
+	m = n/n1;
+	n = n%n1;
+	c = n/n2;
+	n = n%n2;
+	d = n/n3;
+	n = n%n3;
+	u = n;
+	
+	
+	cout<< m;
+	puts("");	
+	cout<< c;
+	puts("");	
+	cout<< d;
+	puts("");	
+	cout<< u;
+	puts("");	
+	getch();
+}		
