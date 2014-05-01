@@ -1,0 +1,36 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main()
+{
+	float b,c,a,x1,x2;
+	int n;
+	cout<< "Ingrese el valor A: " ;
+	cin>> a;
+	cout<< "Ingrese el valor B: " ;
+	cin>> b;
+	cout<< "Ingrese el valor C: " ;
+	cin>> c;
+	x1=0;
+	x2=0;
+	n=1/2;
+	while (!(a>0)&&!(b*b>=4*a*c))
+	{
+		puts("ERROR Ingrese nuevamente los valores");
+		cout<< "Ingrese el valor A: " ;
+		cin>> a;
+		cout<< "Ingrese el valor B: " ;
+		cin>> b;
+		cout<< "Ingrese el valor C: " ;
+		cin>> c;
+	}
+	x1 = (-b+(pow(((b*b)-(4*a*c)),n))/(2*a) );
+	cout<<x1;
+	x2= ((-b - (pow(((b*b)-(4*a*c)),n)))/(2*a));
+	cout<< x2;
+	getch();
+}
