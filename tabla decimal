@@ -1,15 +1,28 @@
+
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
+#include "math.h"
 
 using namespace std;
-void main()
+void main() 
 {
-	int i;
+	int n,r,d,s;
+	float i;
+	cout<< "\n\nIngrese el valor de n:";
+	cin>>n;
+	cout<< "\n\nIngrese el valor de base:";
+	cin>>r;
+	s=0;
 	i=0;
-	for (i=1;i<=10;i++)
+	while (n>0)
 	{
-		cout<< i;
+		d=n%10;
+		n=n/10;
+		s=s+d*pow(r,i);
+		i=i+1;
 	}
+	cout<< "\n\nEl resultado es: ";
+	cout<< s;
 	getch();
 }
