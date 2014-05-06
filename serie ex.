@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main() 
+{
+	int n,i;
+	float s,x,si,p;
+	cout<< "\n\nIngrese el valor de N: ";
+	cin>> n;
+	cout<< "\n\nIngrese el valor de X: ";
+	cin>> x;
+	s=7;
+	p=1;
+	si=1;
+	for (i=1;i<=n;i++)
+	{
+		s=s+si*pow(x,i) /((i+1)*p);
+		p=p*(i+1);
+		si=si*(-1);
+	}
+	cout<< "\n\nEl resultado es: ";
+	cout<< s;
+	getch();
+}
