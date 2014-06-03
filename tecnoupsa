@@ -9,7 +9,7 @@ void main()
 
 {
 int NC,Op,Con,i,p;
-system("color f0");
+system("color f1");
 do{
 	char caracter = '*';
 	for (i=0;i<=79;i++)
@@ -34,27 +34,27 @@ while ((Op<1)||(Op>3))
 	cout<< "\n\n\t\t 1.- Casa \n\n\t\t 2.- Cafe Internet \n\n\t\t 3.- Oficina/Empresa \n ";
 }
 if (NC<=5&&Op==1)
-	cout<<"\n\n*COTAS.- 512KBPS X BS.173 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 512KBPS X BS.150";
+	cout<<"\n\n\t\t*COTAS.- 512KBPS X BS.173 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 512KBPS X BS.150";
 if (NC>5&&NC<=10&&Op==1)
-	cout<<"\n\n*COTAS.- 620KBPS X BS.209 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 768KBPS X BS.170";
+	cout<<"\n\n\t\t*COTAS.- 620KBPS X BS.209 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 768KBPS X BS.170";
 if (NC<=5&&Op==2)
-	cout<<"\n\n*COTAS.- 512KBPS X BS.173 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 512KBPS X BS.150";
+	cout<<"\n\n\t\t*COTAS.- 512KBPS X BS.173 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 512KBPS X BS.150";
 if (NC>5&&NC<=10&&Op==2)
-	cout<<"\n\n*COTAS.- 730KBPS X BS.245 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 768KBPS X BS.170";
+	cout<<"\n\n\t\t*COTAS.- 730KBPS X BS.245 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 768KBPS X BS.170";
 if (NC>=10&&NC<=20&&Op==2)
-	cout<<"\n\n*COTAS.- 1024KBPS X BS.315 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 1024KBPS X BS.230";
+	cout<<"\n\n\t\t*COTAS.- 1024KBPS X BS.315 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 1024KBPS X BS.230";
 if (NC>=20&&NC<=50&&Op==2)
-	cout<<"\n\n*COTAS.- 2450KBPS X BS.713 \n\n*AXS.- 2048KBPS X BS.749 \n\n*ENTEL.- 2048KBPS X BS.780";
+	cout<<"\n\n\t\t*COTAS.- 2450KBPS X BS.713 \n\n\t\t*AXS.- 2048KBPS X BS.749 \n\n\t\t*ENTEL.- 2048KBPS X BS.780";
 if (NC<=5&&Op==3)
-	cout<<"\n\n*COTAS.- 512KBPS X BS.173 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 512KBPS X BS.150";
+	cout<<"\n\n\t\t*COTAS.- 512KBPS X BS.173 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 512KBPS X BS.150";
 if (NC>5&&NC<=10&&Op==3)
-	cout<<"\n\n*COTAS.- 730KBPS X BS.245 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 768KBPS X BS.170";
+	cout<<"\n\n\t\t*COTAS.- 730KBPS X BS.245 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 768KBPS X BS.170";
 if (NC>=10&&NC<=20&&Op==3)
-	cout<<"\n\n*COTAS.- 1024KBPS X BS.315 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 1024KBPS X BS.230";
+	cout<<"\n\n\t\t*COTAS.- 1024KBPS X BS.315 \n\n\t\t*AXS.- 1024KBPS X BS.279 \n\n\t\t*ENTEL.- 1024KBPS X BS.230";
 if (NC>=20&&NC<=50&&Op==3)
-	cout<<"*\n\nCOTAS.- 2450KBPS X BS.713 \n\n*AXS.- 2048KBPS X BS.749 \n\n*ENTEL.- 2048KBPS X BS.780";
+	cout<<"*\n\n\t\tCOTAS.- 2450KBPS X BS.713 \n\n\t\t*AXS.- 2048KBPS X BS.749 \n\n\t\t*ENTEL.- 2048KBPS X BS.780";
 if (NC>=50&&NC<=100&&Op==3)
-	cout<<"\n\n*COTAS.- 10570KBPS X BS.3023 \n\n*AXS.- 10000KBPS X BS.3629 \n\n*ENTEL.-  8192KBPS X BS.3000";
+	cout<<"\n\n\t\t*COTAS.- 10570KBPS X BS.3023 \n\n\t\t*AXS.- 10000KBPS X BS.3629 \n\n\t\t*ENTEL.-  8192KBPS X BS.3000";
 
 cout<< "\n\nDesea continuar si(8) no(9)";
 cin>> Con;
@@ -64,3 +64,4 @@ while(Con==8);
 getch();
 
 }
+
