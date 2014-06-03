@@ -8,13 +8,16 @@ using namespace std;
 void main()
 
 {
-int NC,Op,Con,i;
+int NC,Op,Con,i,p;
 system("color f0");
 do{
 	char caracter = '*';
 	for (i=0;i<=79;i++)
 cout<< caracter;
-cout<< "\n\t\t SOFTWARE DE ASESORAMIENTO DE PLANES DE INTERNET ";
+cout<< "\n\n\t\t\t\t*TECNOUPSA2014*\n";
+cout<<"\t_______________________________________________________________\n";
+cout<< "\n\t\t SOFTWARE DE ASESORAMIENTO DE PLANES DE INTERNET\n ";
+cout<<"\t_______________________________________________________________";
 cout<< "\n\nIngrese el numero de computadoras: ";
 cin>> NC;
 while (NC<=0)
@@ -22,13 +25,13 @@ while (NC<=0)
 	cout<<"\n ERROR Ingrese el numero de computadoras: ";
 	cin>> NC;
 }
-cout<< "\n\nSeleccione una opcion : \n\n 1.- Casa \n\n 2.- Cafe Internet \n\n 3.- Oficina/Empresa \n ";
+cout<< "\n\nSeleccione una opcion : \n\n\t\t 1.- Casa \n\n\t\t 2.- Cafe Internet \n\n\t\t 3.- Oficina/Empresa \n ";
 cin>> Op;
 while ((Op<1)||(Op>3))
 {
 	cout<<"\nERROR Seleccione una opcion : ";
 	cin>> Op;
-	cout<< "\n\n 1.- Casa \n 2.- Cafe Internet \n 3.- Oficina/Empresa \n ";
+	cout<< "\n\n\t\t 1.- Casa \n\n\t\t 2.- Cafe Internet \n\n\t\t 3.- Oficina/Empresa \n ";
 }
 if (NC<=5&&Op==1)
 	cout<<"\n\n*COTAS.- 512KBPS X BS.173 \n\n*AXS.- 1024KBPS X BS.279 \n\n*ENTEL.- 512KBPS X BS.150";
@@ -52,6 +55,7 @@ if (NC>=20&&NC<=50&&Op==3)
 	cout<<"*\n\nCOTAS.- 2450KBPS X BS.713 \n\n*AXS.- 2048KBPS X BS.749 \n\n*ENTEL.- 2048KBPS X BS.780";
 if (NC>=50&&NC<=100&&Op==3)
 	cout<<"\n\n*COTAS.- 10570KBPS X BS.3023 \n\n*AXS.- 10000KBPS X BS.3629 \n\n*ENTEL.-  8192KBPS X BS.3000";
+
 cout<< "\n\nDesea continuar si(8) no(9)";
 cin>> Con;
 system("cls");
