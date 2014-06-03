@@ -9,10 +9,13 @@ using namespace std;
 void main()
 
 {
-int NC,Op,Con;
+int NC,Op,Con,i;
 system("color f0");
 do{
-cout<< "\t\t SOFTWARE DE ASESORAMIENTO DE PLANES DE INTERNET ";
+	char caracter = '*';
+	for (i=0;i<=79;i++)
+cout<< caracter;
+cout<< "\n\t\t SOFTWARE DE ASESORAMIENTO DE PLANES DE INTERNET ";
 cout<< "\n\nIngrese el numero de computadoras: ";
 cin>> NC;
 while (NC<=0)
@@ -20,7 +23,7 @@ while (NC<=0)
 	cout<<"\n ERROR Ingrese el numero de computadoras: ";
 	cin>> NC;
 }
-cout<< "\n\nSeleccione ****** : \n 1.- Casa \n 2.- Cafe Internet \n 3.- Oficina/Empresa \n ";
+cout<< "\n\nSeleccione ***** : \n 1.- Casa \n 2.- Cafe Internet \n 3.- Oficina/Empresa \n ";
 cin>> Op;
 while ((Op<1)||(Op>3))
 {
@@ -29,6 +32,8 @@ while ((Op<1)||(Op>3))
 }
 if (NC<=5&&Op==1)
 	cout<<"\n*COTAS.- 512KBPS X BS.173 \n*AXS.- 1024KBPS X BS.279 \n*ENTEL.- 512KBPS X BS.150";
+if (NC>5&&NC<=10&&Op==1)
+	cout<<"\n*COTAS.- 620KBPS X BS.209 \n*AXS.- 1024KBPS X BS.279 \n*ENTEL.- 768KBPS X BS.170";
 if (NC<=5&&Op==2)
 	cout<<"\n*COTAS.- 512KBPS X BS.173 \n*AXS.- 1024KBPS X BS.279 \n*ENTEL.- 512KBPS X BS.150";
 if (NC>5&&NC<=10&&Op==2)
@@ -45,7 +50,9 @@ if (NC>=10&&NC<=20&&Op==3)
 	cout<<"*COTAS.- 1024KBPS X BS.315 \n*AXS.- 1024KBPS X BS.279 \n*ENTEL.- 1024KBPS X BS.230";
 if (NC>=20&&NC<=50&&Op==3)
 	cout<<"*COTAS.- 2450KBPS X BS.713 \n*AXS.- 2048KBPS X BS.749 \n*ENTEL.- 2048KBPS X BS.780";
-cout<< "\nDesea continuar si(8)";
+if (NC>=50&&NC<=100&&Op==3)
+	cout<<"*COTAS.- 10570KBPS X BS.3023 \n*AXS.- 10000KBPS X BS.3629 \n*ENTEL.-  8192KBPS X BS.3000";
+cout<< "\n\nDesea continuar si(8) no(9)";
 cin>> Con;
 system("cls");
 }
@@ -53,3 +60,4 @@ while(Con==8);
 getch();
 
 }
+
