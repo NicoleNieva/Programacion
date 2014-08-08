@@ -1,0 +1,27 @@
+
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int division(int a,int b);
+void main()
+{
+	int d,a,b;
+	cout<<"Ingrese el primer numero: ";
+	cin>> a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>> b;
+	d = division(a,b);
+	cout<<"El resultado es: "<< d;
+	getch();
+}
+int division(int a, int b)
+{
+	int d=0;
+	while(a>0)
+	{
+	a = a - b;
+	d++;
+	}
+	return (d);
+}
