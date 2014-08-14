@@ -1,0 +1,66 @@
+#include <iostream>
+#include "conio.h"
+
+int digitos(int a, int b );
+int sumaim(int a, int b);
+int invertir(int a,int b);
+using namespace std;
+void main()
+{ 
+	int a,p,b,s,i;
+  cout<< "Ingrese el numero: ";
+  cin>>a;
+ 
+  
+	  p = digitos(a,b);
+	  cout<<"\n\nEl numero de digitos que tiene su numero es: "<<p;
+
+	  s = sumaim(a,b);
+	  cout<<"\n\nLa suma de los numeros impares que tiene su numero es: "<<s;
+
+	  i = invertir(a,b);
+	  cout<<"\n\nSu numero invertido es: "<<i;
+
+  getch();
+}
+  int digitos(int a,int b )
+  {
+	  int p,d;
+	  p=0;
+	  while(a>0)
+	  {
+		  d = a % 10;
+		  a = a / 10;
+		  p++;
+	  }
+	  return (p);
+  }
+   int sumaim(int a, int b)
+   {
+	   int s,q;
+	   while (a>0)
+	   {
+		   q = a % 10;
+		   a = a / 10;
+		   if (q % 2 == 1)
+		   {
+			   q = q/2;
+			   s = s + (q*2+1);
+		   }
+		   
+	   }
+	   return(s);
+   }
+   int invertir(int a,int b)
+   {
+	   int r,i;
+	   i=0;
+      while(a!=0)
+      {
+          r=a%10;
+          a=a/10;
+          i=i*10+r;
+		}
+	  
+	       return(i);
+   }
