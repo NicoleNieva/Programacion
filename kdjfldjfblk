@@ -1,0 +1,24 @@
+#include<iostream>
+#include"conio.h"
+#include <math.h>
+using namespace std;
+int unir(int a, int b);
+void main()
+{
+	int a,u,b;
+	cout<<"\n\nIngrese el primer numero: ";
+	cin>>a;
+	cout<<"\n\nIngrese el numero que desea unir: ";
+	cin>>b;
+	u=unir(a,b);
+	cout<<u;
+	getch();
+}
+int unir(int a, int b)
+{
+	int u=0;
+	a=a*10;
+	u=10*a+b;
+	
+	return (u);
+}
