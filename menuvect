@@ -1,0 +1,98 @@
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void cargar(int vect[],int n);
+void mostrar(int vect[],int n);
+int sumaElem(int vect[],int n);
+bool verfSiElemExiste(int vect[],int n,int elem);
+int frecuencia(int vect[],int n,int elem);
+
+void main()
+{
+	int n=0,vect[30],opc,elem;
+	do{
+	cout<<endl<<"\t\t\t\t***MENU***";
+	cout<<endl<<"\n\n1.CARGAR VECTOR: ";
+	cout<<endl<<"\n\n2.MOSTRAR VECTOR: ";
+	cout<<endl<<"\n\n3.SUMA DE ELEMENTOS DEL VECTOR: ";
+	cout<<endl<<"\n\n4.VERIFICAR SI EL ELEMENTO PERTENECE AL VECTOR ";
+	cout<<endl<<"\n\n5.LAS VECES QUE SE REPITE EL ELEMENTO.. ";
+	cout<<endl<<"\n\n6.SALIR ";
+	cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
+	cin>>opc;
+	switch(opc){
+		case 1 : cout<<"\n\n*Introducir el numero de elementos: ";
+				 cin>>n;		
+				 cargar(vect,n);
+				 break;
+		case 2 : mostrar(vect,n);
+				 break;
+		case 3 : cout<<"\n\n*La suma de elementos es\n: "<<sumaElem(vect,n);
+				 break;
+		case 4 : cout<<"\n*Introducir elementos para verificar\n: ";
+				 cin>>elem;
+				 if(verfSiElemExiste(vect,n,elem))
+				 cout<<"\n*El elemento SI existe.. \n";
+				 else
+				 cout<<"\n*El elemento NO existe.. \n";
+				 
+				 break;
+		case 5 :cout<<"\n*Introducir elementos de su repeticion\n: ";
+				cin>>elem;
+				cout<<"\n*El resultado de la verificacion es\n: "<<frecuencia(vect,n,elem);
+	}
+
+		
+	}while(opc!=0);
+}
+	
+void mostrar(int vect[],int n)
+{
+	int i;
+	cout<<"\n\n*EL VECTOR ES.. \n";
+	for(i=0;i<n;i++)
+	{
+		cout<<vect[i]<<"   ";
+	}
+}
+void cargar(int vect[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<"\n\n*Introducir elemento\n: ";
+		cin>>vect[i];
+	}
+}
+int sumaElem(int vect[],int n)
+{ 
+	int i,s=0;
+	for(i=0;i<n;i++)
+	{
+		s=s+vect[i];
+	}
+	return(s);
+}
+bool verfSiElemExiste(int vect[],int n,int elem)
+{
+	int i;
+	bool k=false;
+	for(i=0;i<n;i++)
+	{
+		if(vect[i]==elem)
+			k=true;
+	}
+	return(k);
+}
+int frecuencia(int vect[],int n,int elem)
+{
+	int i,c=0;
+	for(i=0;i<n;i++)
+	{
+		if(vect[i]==elem)
+			c++;
+	}
+	return(c);
+}
+
+
