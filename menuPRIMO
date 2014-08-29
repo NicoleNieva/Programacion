@@ -1,0 +1,113 @@
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+bool verfSiEsPrimo(int n)
+{
+	int i;
+	bool k=true;
+	for(i=2;i<=n-1;i++)
+	{
+		if(n%i==0)
+		{
+		k=false;
+		}
+	}
+return(k);
+}
+
+int nprimo(int n)
+{
+	int cp=0,c=0;
+	while(cp<n)
+	{
+		c++;
+		if(verfSiEsPrimo(c)==true)
+		{
+			cp++;
+		}
+	}
+	return(c);
+}
+
+
+void cargarPrimoAscDes(int vect[],int n)
+{
+	int i, cpa=1,cpd=n/2;
+	for(i=0;i<n;i++)
+	{
+		if(i%2==0)
+		{
+			vect[i]=nprimo(cpa);
+			cpa++;
+		}
+		else 
+		{
+			vect[i]=nprimo(cpd);
+			cpd--;
+		}
+	}
+}
+void mostrar(int vect[],int n)
+{
+	int i;
+	cout<<"\n\n*EL VECTOR ES.. \n";
+	for(i=0;i<n;i++)
+	{
+		cout<<vect[i]<<" ";
+	}
+}
+
+
+
+void cargar(int vect[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+	cout<<"\n\n*Introducir elemento\n: ";	
+	cin>>vect[i];
+	}
+}
+void cargarImparPrimoPar(int vect[],int n)
+{
+	int cImp=1, cPrim=1, cPar=2, k=1, i;
+	for(i=0;i<n;i++)
+	{
+		if(k==1)
+		{
+			vect[i]= cImpar;
+			cImpar=
+}
+void main()
+{
+int n=0,vect[30],opc,elem;
+do{
+cout<<endl<<"\t\t\t\t***MENU***";
+cout<<endl<<"\n\n1.CARGAR VECTOR: ";
+cout<<endl<<"\n\n2.MOSTRAR VECTOR: ";
+cout<<endl<<"\n\n3.CARGAR AUTOMATICAMENTE CON PRIMOS INTERCALADOS ASC. Y DESC: ";
+cout<<endl<<"\n\n4.CARGAR AUTOMATICAMENTE CON IMPAR, PRIMO, PAR: ";
+cout<<endl<<"\n\n0.SALIR ";
+cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
+cin>>opc;
+switch(opc){
+case 1 : cout<<"\n\n*Introducir el numero de elementos: ";
+		cin>>n;
+		cargar(vect,n);
+		break;
+case 2 : mostrar(vect,n);
+		 break;
+case 3 : cout<<"\n\n*Introducir numero de elementos\n: ";
+		 cin>>n;
+		 cargarPrimoAscDes(vect,n);
+		 break; 
+case 4 : cout<<"Introducir numero de elemento : ";
+		 cin>>n;
+		 cargarImparPrimoPar(vect,n);
+		 break;
+	}
+}
+while(opc!=0);
+}
