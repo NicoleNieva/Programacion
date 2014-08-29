@@ -49,15 +49,6 @@ void cargarPrimoAscDes(int vect[],int n)
 		}
 	}
 }
-void mostrar(int vect[],int n)
-{
-	int i;
-	cout<<"\n\n*EL VECTOR ES.. \n";
-	for(i=0;i<n;i++)
-	{
-		cout<<vect[i]<<" ";
-	}
-}
 
 
 
@@ -77,9 +68,52 @@ void cargarImparPrimoPar(int vect[],int n)
 	{
 		if(k==1)
 		{
-			vect[i]= cImpar;
-			cImpar=
+			vect[i]= cImp;
+			cImp= cImp + 2;
+			k=2;
+		}
+		else
+		{
+			if(k==2)
+			{
+				vect[i]= nprimo(cPrim++);
+				k=3;
+			}
+			else
+			{
+				vect[i]=cPar;
+				cPar= cPar + 2;
+				k=1;
+			}
+		}
+	}
 }
+void eliminarElemento(int vect[],int &n,int elem)
+{
+	int i,k;
+	for (i=0;i<n;i++){
+		if(vect[i]== elem){
+		for(k=i;k<n-1;k++)
+		{
+			vect[k]=vect[k+1];
+		}
+		n--;
+		i--;
+		}
+	}
+}
+
+
+void mostrar(int vect[],int n)
+{
+	int i;
+	cout<<"\n\n*EL VECTOR ES.. \n";
+	for(i=0;i<n;i++)
+	{
+		cout<<vect[i]<<" ";
+	}
+}
+
 void main()
 {
 int n=0,vect[30],opc,elem;
@@ -89,6 +123,7 @@ cout<<endl<<"\n\n1.CARGAR VECTOR: ";
 cout<<endl<<"\n\n2.MOSTRAR VECTOR: ";
 cout<<endl<<"\n\n3.CARGAR AUTOMATICAMENTE CON PRIMOS INTERCALADOS ASC. Y DESC: ";
 cout<<endl<<"\n\n4.CARGAR AUTOMATICAMENTE CON IMPAR, PRIMO, PAR: ";
+cout<<endl<<"\n\n5.ELIMINAR UN ELEMENTO : ";
 cout<<endl<<"\n\n0.SALIR ";
 cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
 cin>>opc;
@@ -106,6 +141,10 @@ case 3 : cout<<"\n\n*Introducir numero de elementos\n: ";
 case 4 : cout<<"Introducir numero de elemento : ";
 		 cin>>n;
 		 cargarImparPrimoPar(vect,n);
+		 break;
+case 5 : cout<<"Introducir numero de elemento : ";
+		 cin>>elem;
+		 eliminarElemento(vect,n,elem);
 		 break;
 	}
 }
