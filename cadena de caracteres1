@@ -1,0 +1,111 @@
+#include <iostream>
+#include "conio.h"
+#include <string.h>
+using namespace std;
+
+int ContarCantDeVocales(char cad[])
+{
+	int i, c=0,n;
+	n=strlen(cad);
+	for(i=0;i<n;i++){
+		if((cad[i]=='a')||(cad[i]=='A')||(cad[i]=='e')||(cad[i]=='E')||(cad[i]=='i')||(cad[i]=='I')||(cad[i]=='o')||(cad[i]=='O')||(cad[i]=='u')||(cad[i]=='U')){
+			c++;
+		}
+	}
+	return(c);
+}
+int CantRepeticionCaracter(char cad[],char car)
+{
+	int i, n=strlen(cad),c=0;
+	for(i=0;i<n;i++){
+		if(cad[i]==car){
+			c++;
+		}
+	return(c);
+	}
+}
+void obtSubCadena(char cad[],int desde, int cuantos,char subCad[])
+{ 
+	int i, k=0;
+	for(i=desde-1;i<desde+cuantos-1;i++)
+	{
+		subCad[k++] = cad[i];
+	}
+	subCad[k]= '\0';
+}
+void  elimVocales(char cad[])
+{
+	int i, k, n=strlen(cad);
+	for(i=0;i<n;i++){
+		if ((cad[i]=='a')||(cad[i]=='A')||(cad[i]=='e')||(cad[i]=='E')||(cad[i]=='i')||(cad[i]=='I')||(cad[i]=='o')||(cad[i]=='O')||(cad[i]=='u')||(cad[i]=='U')){
+		
+			for(k=i;k<n-1;k++){
+				cad[k]=cad[k+1];
+			}
+			n--;
+			i--;
+		}
+	}
+	cad[n]= '\0';
+}
+
+void insertarCadena(char cad[], char cad2[],int posicion)
+{
+	char aux[50],aux2[50];
+	obtSubCadena(cad,1,posicion-1,aux);
+	strcat(aux,cad2);
+	//strcpy(cad2,aux);
+	obtSubCadena(cad,posicion+1,strlen(cad)-posicion,aux2);
+	strcat(aux,aux2);
+	//strcpy(cad2,aux);
+	cout<<endl<< aux;
+	getch();
+	
+}
+/*void insertarCadena(char cad[], char cad2[],int posicion)
+{
+	int i, k=0;
+		for(i=0;i<posicion;i++){
+			cad2[]
+
+}/*/
+
+void main()
+{
+	char cad[50],car,cad2[50];
+	int r,opc;
+	cout<<"Introducir una cadena de caracteres: ";
+	gets(cad);
+	do{	
+		cout<<endl<<"\t\t\t\t***MENU***";
+		cout<<endl<<"\n\n1.CONTAR LA CANTIDAD DE VOCALES: ";
+		cout<<endl<<"\n\n2.CONTAR LA CANTIDAD DE REPETICION DE UN CARACTER: ";
+		cout<<endl<<"\n\n3.EXTRAER SUBCADENA: ";
+		cout<<endl<<"\n\n4.ELIMINAR VOCALES: ";
+		cout<<endl<<"\n\n5.INSERTAR CADENA: ";
+		cout<<endl<<"\n\n0.SALIR.. ";
+		cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
+		cin>>opc;
+		switch(opc){
+			case 1 : r = ContarCantDeVocales(cad);
+					cout<<endl<<", tiene :"<<r<<"vocales";
+					 break;
+					
+			case 2 : cout<<"\n\nIntroducir el caracter a contar: ";
+					 cin>> car;
+					 r = CantRepeticionCaracter(cad,car);
+						 cout<<endl<<cad<<"\n\nLa cantidad de repeticion es:"<<r;
+						 break;
+			case 3 : obtSubCadena(cad,6,5,cad2);
+					 cout<<endl<<"La subcadena es: "<<cad2;
+						 break;
+			case 4 : elimVocales(cad);
+					 cout<<endl<<"La cadena sin vocales es: "<<cad;
+						 break;
+				
+			case 5 : insertarCadena(cad,"APONTE",10);
+					 cout<<endl<<"La cadena queda : "<<cad;
+						 break;
+				}
+		}while(opc!=0);
+}
