@@ -66,6 +66,20 @@ void ordenarEdad(regamigo v[],int n){
 		}
 	}
 }
+void eliminarEdadMayor(regamigo v[],int &n){
+
+	int i,k;
+	for (i=0;i<n;i++){
+		if(v[i].edad==mayor(v,n)){
+			for(k=i;k<n-1;k++){
+				v[k]=v[k+1];
+			}
+		n--;
+		i--;
+		}
+	}
+}
+
 void main(){
 	int nroamigo;
 	regamigo vecamigo[20],aux;
@@ -77,7 +91,9 @@ void main(){
 	aux = datosMayor(vecamigo,nroamigo);
 	cout<<endl<<"Los datos del mayor son: "<< aux.Nombre<<"  "<< aux.edad<< "   "<< aux.sexo;
 	cout<<endl<<"La edad ordenada de menor a mayor es :";
-	ordenarEdad(vecamigo,nroamigo);
+	//ordenarEdad(vecamigo,nroamigo);
+	//mostrar(vecamigo,nroamigo);
+	eliminarEdadMayor(vecamigo,nroamigo);
 	mostrar(vecamigo,nroamigo);
 	getch();
 }	
