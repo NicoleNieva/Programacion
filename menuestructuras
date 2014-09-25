@@ -1,0 +1,122 @@
+#include <iostream>
+#include "conio.h"
+#include <string.h>
+using namespace std;
+
+struct regamigo{
+	char Nombre[30];
+	int edad;
+	char sexo;
+};
+
+void cargar(regamigo v[],int n)
+{
+	int i;
+	for(i=0;i<n;i++){
+		cout<<"Introducir Nombre :";
+		do{
+			gets(v[i].Nombre);
+		}while(strlen(v[i].Nombre)==0);
+		cout<<"Edad? :";
+		cin>> v[i].edad;
+		cout<<"Sexo <F/M> ? :";
+		cin>> v[i].sexo;
+	}
+}
+void mostrar(regamigo v[],int n){
+	int i;
+	for(i=0;i<n;i++){
+		cout<< endl << v[i].Nombre<<"  "
+					<< v[i].edad<< "   "
+					<< v[i].sexo;
+	}
+}
+int mayor(regamigo v[],int n){
+	int i, edadMayor=0;
+	for (i=0;i<n;i++){
+		if(v[i].edad > edadMayor){
+			edadMayor = v[i].edad;
+		}
+	}
+	return(edadMayor);
+}
+regamigo datosMayor(regamigo v[],int n)
+{
+	int i,edadMay = 0;
+	regamigo amigMay;
+	for(i=0;i<n;i++){
+		if(v[i].edad > edadMay){
+			edadMay = v[i].edad;
+			amigMay = v[i];
+		}
+	}
+	return(amigMay);
+}
+void ordenarEdad(regamigo v[],int n){
+
+	int i,k;
+	regamigo aux;
+	for (i=0;i<n-1;i++){
+		for(k=i;k<n;k++){
+			if(v[i].edad > v[k].edad){
+				aux=v[i];
+				v[i]=v[k];
+				v[k]=aux;
+			}
+		}
+	}
+}
+void eliminarEdadMayor(regamigo v[],int &n){
+
+	int i,k;
+	for (i=0;i<n;i++){
+		if(v[i].edad==mayor(v,n)){
+			for(k=i;k<n-1;k++){
+				v[k]=v[k+1];
+			}
+		n--;
+		i--;
+		}
+	}
+}
+
+void main(){
+	int nroamigo,opc;
+	regamigo vecamigo[20],aux;
+	cout<<"Cuantos amigos ? :";
+	cin>>nroamigo;
+	do{
+	
+		cout<<endl<<"\t\t\t\t***MENU***";
+		cout<<endl<<"\n\n1.CARGAR: ";
+		cout<<endl<<"\n\n2.MOSTRAR: ";
+		cout<<endl<<"\n\n3.LA EDAD MAYOR: ";
+		cout<<endl<<"\n\n4.LOS DATOS DEL MAYOR: ";
+		cout<<endl<<"\n\n5.LA EDAD ORDENADA DE MENOR A MAYOR: ";
+		cout<<endl<<"\n\n6.ELIMINAR LA EDAD MAYOR: ";
+		cout<<endl<<"\n\n0.SALIR ";
+		cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
+		cin>>opc;
+	switch(opc){
+		case 1 : cargar(vecamigo,nroamigo);
+				 break;
+		case 2 : mostrar(vecamigo,nroamigo);
+				 break;
+		case 3 : cout<<endl<<"La edad mayor es : "<<mayor(vecamigo,nroamigo);
+				 break; 
+				 //mostrar(vecamigo,nroamigo);
+		case 4 : aux = datosMayor(vecamigo,nroamigo);
+				 cout<<endl<<"Los datos del mayor son: "<< aux.Nombre<<"  "<< aux.edad<< "   "<< aux.sexo;
+				 break;
+		case 5 :cout<<endl<<"La edad ordenada de menor a mayor es :";
+				ordenarEdad(vecamigo,nroamigo);
+				mostrar(vecamigo,nroamigo);
+				break;
+		case 6 : eliminarEdadMayor(vecamigo,nroamigo);
+				mostrar(vecamigo,nroamigo);
+				break;
+	}
+}
+while(opc!=0);
+}
+	
