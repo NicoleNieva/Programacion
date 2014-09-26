@@ -1,0 +1,142 @@
+#include <iostream>
+#include  "conio.h"
+using namespace std;
+
+struct vector{
+	int v[50];
+};
+
+void cargar(vector vec[],int n){
+	int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cout<< "Introducir elemento:";
+			cin>> vec[i].vec[j];
+		}
+	}
+}
+void mostrar(vector vec[],int n){
+	int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cout<<vec[i].vec[j]<<"   ";
+		}
+		cout<<endl;
+	}
+}
+int sumaElem(vector vec[],int n){
+	int i,j,s=0;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			s = s + vec[i].vec[j];
+		}
+	}
+	return(s);
+}
+bool verfSiEsPrimo(int n)
+{
+	int i;
+	bool k=true;
+	for(i=2;i<=n-1;i++){
+		if(n%i==0){
+			k=false;
+		}
+	}
+return(k);
+}
+
+int sumaPrimos(vector vec[],int n){
+	int i,j,s=0;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(verifSiEsPrimo(vec[i].vec[j]==true)){
+				s = s + vec[i].vec[j];
+			}
+		}
+	}
+	return (s);
+}
+int sumaPos(vector vec[],int n){
+	int i,j,s=0;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(i==j){
+				s = s +vec[i].vec[j];
+			}
+		}
+	}
+	return(s);
+}
+int obtNesimoPrimo(int n)
+{
+	int cp=0,c=0;
+	while(cp<n){
+		c++;
+		if(verfSiEsPrimo(c)==true){
+			cp++;
+		}
+	}
+	return(c);
+}
+void cargarPrimos(vector vec[],int n){
+	int i,j,p=1;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			vec[i].vec[j]=obtNesimoPrimo(p);
+			p++;
+		}
+	}
+}
+int obtNesimoFibo(int n)
+{
+	int a=-1,b=1,fibo=0;
+		if(n==1)
+	return(0);
+		if(n==2)
+	return(1);
+		for(int i=0;i<n;i++){
+			fibo=a+b;
+			a=b;
+			b=fibo;
+		}
+return(fibo);
+}
+
+
+void cargarPrimoFibo(vector vec[],int n){
+	int i,j,p=1,f=1,k=1;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if (k==1){
+				vec[i].vec[j]=obtNesimoPrimo(p);
+				p++;
+				k=2;
+			}
+			else{
+				vec[i].vec[j]=obtNesimoFibo(f);
+				f++;
+				k=1;
+			}
+		}
+	}
+}
+void main(){
+	int nroElem;
+	vector vec[50];
+	cout<<"CUANTOS ELEMENTOS :\n";
+	cin>>nroElem;
+	do{
+		cout<<endl<<"\t\t\t\t***MENU***";
+		cout<<endl<<"\n\n1.CARGAR: ";
+		cout<<endl<<"\n\n2.MOSTRAR: ";
+		cout<<endl<<"\n\n3.SUMAR ELEMENTOS: ";
+		cout<<endl<<"\n\n4.SUMAR PRIMOS: ";
+		cout<<endl<<"\n\n5.SUMAR POSICION: ";
+		cout<<endl<<"\n\n6.CARGAR AUTOMATICAMENTE PRIMOS: ";
+		cout<<endl<<"\n\n7.CARGAR AUTOMATICAMENTE PRIMOFIBO: ";
+		cout<<endl<<"\n\n0.SALIR ";
+		cout<<endl<<"\n\nELEGIR UNA OPCION.. ";
+		cin>>opc;
+	switch(opc){
+		case 1 : cargar(vec,nroElem);
+				 break;
