@@ -1,0 +1,110 @@
+#include <iostream>
+#include "conio.h"
+#include <iomanip>
+#define FIL 50
+#define COL 50
+using namespace std;
+struct tvector{
+	int vec[FIL];
+};
+void cargaraleatoriamente(tvector mat[FIL][COL],int n){
+	int i,j,k;
+	for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				for(k=0;k<n;k++){
+				mat[i][j].vec[k]=rand()%100;
+				}
+			}
+	}
+}
+void mostrar(tvector mat[FIL][COL],int n){
+int i,j,k;
+	cout<<endl<<"La matriz de vectores es...:"<<endl;
+	for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				for(k=0;k<n;k++){
+					cout<<setw(4)<<mat[i][j].vec[k];
+				}
+				cout<<"  ";
+			}
+			cout<<endl;
+	}
+}
+void TSporTI(tvector mat[FIL][COL],int n){
+	int i,j,k;
+	tvector aux;
+	for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+					if(j>i){
+						aux      = mat[i][j];
+						mat[i][j]= mat[j][i];
+						mat[j][i]= aux;
+					
+				}
+			}
+	}
+}
+bool verfSiEsPrimo(int n){
+	int i;
+	bool k=true;
+	for(i=2;i<=n-1;i++){
+		if(n%i==0){
+			k=false;
+		}
+	}
+return(k);
+}
+void ordenar(int vector[],int n){
+int i,j,aux;
+	for (int i=0;i<n;i++){
+		for(int j=i;j<n;j++){
+			if(vector[i]> vector[j]){
+				aux=vector[i];
+			    vector[i]=vector[j];
+				vector[j]=aux;
+			}
+		}
+	}
+}
+bool verifSihayPrimosEnVector(int vec[],int n){
+	int i;
+	bool k=false;
+	for(i=0;i<n;i++){
+		if(verfSiEsPrimo(vec[i])){
+			k=true;
+		}
+	}
+	return(k);
+}
+
+void ordenarmatrizvecPRIMO(tvector mat[FIL][COL],int n){
+	int i,j;
+	tvector aux;
+	for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				if(verifSihayPrimosEnVector(mat[i][j].vec,n)){
+						ordenar(mat[i][j].vec,n);
+				}
+			}
+	}
+}
+						
+	
+
+
+					
+
+
+void main(){
+	int n;
+	tvector mat[FIL][COL];
+	cout<<"Ingrese valor para n: ";
+	cin>>n;
+	cargaraleatoriamente(mat,n);
+	mostrar(mat,n);
+	//TSporTI(mat,n);
+	//mostrar(mat,n);
+	ordenarmatrizvecPRIMO(mat,n);
+	mostrar(mat,n);
+	getch();
+}
