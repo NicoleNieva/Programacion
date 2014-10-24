@@ -1,0 +1,19 @@
+int a,b,r;//DECLARANDO VARIABLES
+		a = Convert::ToInt16(textBox1->Text);//convierte de text a int
+		b = Convert::ToInt16(textBox2->Text);//convierte de text a int
+		r = a*b;//algoritmo MULTIPLICA
+		textBox3->Text = Convert::ToString(r);//convierte de int a text
+		MessageBox::Show("La Multiplicacion es : " + r,"CALCULADORA");
+		multiplicacion,suma,resta,porcentaje y division
+		
+		
+		int a,b,r;//DECLARANDO VARIABLES
+		a = Convert::ToInt16(textBox1->Text);//convierte de text a int
+		b = Convert::ToInt16(textBox2->Text);//convierte de text a int
+		if (b!=0){
+		r = a/b;//algoritmo division
+		textBox3->Text = Convert::ToString(r);//convierte de int a text
+		MessageBox::Show("La Division es : " + r,"CALCULADORA");
+		}else{
+			MessageBox::Show("Division entre 0..!!");
+		}		
