@@ -1,0 +1,171 @@
+#include<iostream>
+#include<stdio.h>
+#include<iomanip>
+using namespace std;
+struct regProyecto{
+  char nombre[30];
+  int  idProyecto;
+};
+struct regInversionista{
+	int idInversionista;
+	char nombre[30];
+	char CI[10];
+	char telefono[12];
+	char email[50];
+};
+struct regInversion{
+	int idInversion;
+	float monto;
+	char fecha[10];
+};
+
+void adicionarProyecto(){
+	FILE*ptr;
+	regProyecto reg;
+	cout<<"\nIngresar el id del proyecto: ";
+	cin>> reg.idProyecto;
+	cout<<endl<<"Introducir nombre: ";
+	do{
+		gets(reg.nombre);
+	}while(strlen(reg.nombre)==0);
+	ptr=fopen("proyecto.dat","ab");
+	fwrite(&reg,sizeof(reg),1,ptr);
+	fclose(ptr);
+}
+void mostrarTodoElProyecto(){
+	FILE*ptr;
+	regProyecto reg;
+	ptr=fopen("proyecto.dat","rb");
+	if(ptr==NULL){
+		cout<<"el archivo no existe";
+	}else{
+		cout<<endl<<setw(30)<<"-------------------------------------------------------";
+        cout<<endl<<setw(20)<<" IdProyecto              Nombre						   ";
+        cout<<endl<<setw(5)<<"-------------------------------------------------------";
+		fread(&reg,sizeof(reg),1,ptr);
+		while(!feof(ptr)){
+			
+			cout<<endl<<setw(5)<<reg.idProyecto<<setw(35)<<reg.nombre;
+			fread(&reg,sizeof(reg),1,ptr);
+		}
+		fclose(ptr);
+		 cout<<endl<<setw(60)<<"-------------------------------------------------------";
+	}
+}
+void adicionarInversionista(){
+	FILE*ptr;
+	regInversionista reg;
+	cout<<endl<<"Ingresar el id del inversionista: ";
+	cin>> reg.idInversionista;
+	cout<<endl<<"Introducir nombre: ";
+	do{
+		gets(reg.nombre);
+	}while(strlen(reg.nombre)==0);
+	cout<<"Introducir el CI del inversionista: ";
+	cin>> reg.CI;
+	cout<<"Ingresar el nro de telefono del inversionista: ";
+	cin>> reg.telefono;
+	cout<<"Ingresar el email del inversionista: ";
+	cin>> reg.email;
+	ptr=fopen("inversionista.dat","ab");
+	fwrite(&reg,sizeof(reg),1,ptr);
+	fclose(ptr);
+}
+void mostrarTodosLosInversionistas(){
+	FILE*ptr;
+	regInversionista reg;
+	ptr=fopen("inversionista.dat","rb");
+	if(ptr==NULL){
+		cout<<"le archivo no existe";
+	}else{
+	    cout<<endl<<setw(60)<<"-------------------------------------------------------";
+        cout<<endl<<setw(5)<<"  idInversionista   Nombre      CI      Telefono       Email";
+        cout<<endl<<setw(60)<<"-------------------------------------------------------";
+		fread(&reg,sizeof(reg),1,ptr);
+		while(!feof(ptr)){
+			
+			cout<<endl<<setw(10)<<reg.idInversionista<<setw(20)<<reg.nombre<<setw(10)<<reg.CI<<setw(10)<<reg.telefono<<setw(20)<<reg.email;
+			
+			fread(&reg,sizeof(reg),1,ptr);
+		}
+		fclose(ptr);
+		 cout<<endl<<setw(60)<<"-------------------------------------------------------";
+	}
+}
+/*
+void adicionarInversion(){
+	FILE*ptr;
+	regInversion reg;
+	regProyecto regp;
+	regInversionista regi;
+	cout<<endl<<"Introducir el id de la inversion: ";
+	cin>>reg.idInversion;
+	cout<<"Ingresar el Monto: ";
+	cin>> reg.monto;
+	cout<<endl<<"Introducir Fecha: ";
+	do{
+		gets(reg.fecha);
+	}while(strlen(reg.fecha)==0);
+	cout<<"Ingresar el id del proyecto: ";
+	cin>> regp.idProyecto;
+	cout<<"Ingresar el id del inversionista: ";
+	cin>> regi.idInversionista;
+	ptr=fopen("inversion.dat","ab");
+	fwrite(&reg,sizeof(reg),1,ptr);
+	fclose(ptr);
+}
+void mostrarTodasLasInversiones(){
+	FILE*ptr;
+	regInversion reg;
+	regProyecto regp;
+	regInversionista regi;
+	ptr=fopen("inversion.dat","rb");
+	if(ptr==NULL){
+		cout<<"le archivo no existe";
+	}else{
+	    cout<<endl<<setw(60)<<"-------------------------------------------------------";
+        cout<<endl<<setw(5)<<"  idInversion   Monto      Fecha      idProyecto       idInversionista";
+        cout<<endl<<setw(60)<<"-------------------------------------------------------";
+		fread(&reg,sizeof(reg),1,ptr);
+		while(!feof(ptr)){
+		
+			cout<<endl<<setw(10)<<reg.idInversion<<setw(20)<<reg.monto<<setw(10)<<reg.fecha<<setw(10)<<regp.idProyecto<<setw(20)<<regi.idInversionista;
+			
+			fread(&reg,sizeof(reg),1,ptr);
+		}
+		fclose(ptr);
+		 cout<<endl<<setw(60)<<"-------------------------------------------------------";
+	}
+}*/
+void main(){
+	int opcion;
+	do{
+		cout<<endl<<endl<<"*MENU ARCHIVO*";
+        cout<<endl<<"1.-Adicionar Proyecto";
+        cout<<endl<<"2.-Mostrar todo el proyecto";
+		cout<<endl<<"3.-Adicionar Inversionista";
+		cout<<endl<<"4.-Mostrar todos los inversionistas";
+		cout<<endl<<"5.-Adicionar Inversion";
+		cout<<endl<<"6.-Mostrar todos las inversiones";
+		cout<<endl<<"7.-Adicionar Egreso";
+		cout<<endl<<"8.-Mostrar todos los Egresos";
+		cout<<endl<<"0.-Salir";
+		cout<<endl<<"seleccione opcion: ";
+		cin>>opcion;
+		switch(opcion){
+			case 1 : adicionarProyecto();
+					 break;
+			case 2 : mostrarTodoElProyecto();
+					 break;
+			case 3 : adicionarInversionista();
+					 break;
+			case 4 : mostrarTodosLosInversionistas();
+					 break;
+			//case 5 : adicionarInversion();
+					// break;
+			//case 6 : mostrarTodasLasInversiones();
+					 //break;
+		}
+	}while(opcion!=0);
+	
+}
